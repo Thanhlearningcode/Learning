@@ -62,38 +62,21 @@
 </head>
 <body>
     <div class="tabs">
-        <div class="tab active" onclick="showContent(0)">
+        <div class="tab active" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
             <img src="https://via.placeholder.com/16" alt="Icon 1">Tab 1
         </div>
-        <div class="tab" onclick="showContent(1)">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
             <img src="https://via.placeholder.com/16" alt="Icon 2">Tab 2
         </div>
-        <div class="tab" onclick="showContent(2)">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
             <img src="https://via.placeholder.com/16" alt="Icon 3">Tab 3
         </div>
-        <div class="tab" onclick="showContent(3)">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
             <img src="https://via.placeholder.com/16" alt="Icon 4">Tab 4
         </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/16" alt="YouTube">YouTube Playlist
+        </div>
     </div>
-
-    <div class="content" id="content">
-        Content for Tab 1
-    </div>
-
-    <script>
-        const contents = [
-            "Content for Tab 1",
-            "Content for Tab 2",
-            "Content for Tab 3",
-            "Content for Tab 4",
-        ];
-
-        function showContent(index) {
-            document.getElementById('content').innerText = contents[index];
-            document.querySelectorAll('.tab').forEach((tab, i) => {
-                tab.classList.toggle('active', i === index);
-            });
-        }
-    </script>
 </body>
 </html>
