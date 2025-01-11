@@ -9,13 +9,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #000000; /* Nền toàn trang là màu đen */
+            color: #ffffff; /* Màu chữ toàn trang là trắng */
         }
 
         .tabs {
             display: flex;
             flex-wrap: wrap;
-            background-color: #e0e0e0;
+            background-color: #333333; /* Màu nền cho thanh chứa các tab */
             padding: 30px; /* Giảm khoảng cách xung quanh các tab */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
@@ -24,8 +25,8 @@
             flex-shrink: 0;
             padding: 20px 30px; /* Giảm padding để làm tab nhỏ hơn */
             margin: 10px; /* Giảm margin để có khoảng cách giữa các tab */
-            background-color: #000000; /* Màu nền của tab là đen */
-            color: #ffffff; /* Màu chữ là trắng */
+            background-color: #007bff; /* Màu nền tab là màu xanh dương sáng */
+            color: #ffffff; /* Chữ trong các tab là màu trắng */
             border: 1px solid #cccccc;
             border-radius: 10px; /* Giảm độ bo góc */
             text-align: center;
@@ -36,13 +37,13 @@
         }
 
         .tab:hover {
-            background-color: #444444; /* Đổi màu nền khi hover */
+            background-color: #0056b3; /* Đổi màu nền khi hover (xanh dương đậm hơn) */
         }
 
         .tab.active {
-            background-color: #007bff;
+            background-color: #28a745; /* Màu nền cho tab đang hoạt động */
             color: #ffffff;
-            border-color: #0056b3;
+            border-color: #1e7e34;
         }
     </style>
 </head>
