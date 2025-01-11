@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #e0e0e0;
+            padding: 5px;
+            overflow-x: auto;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab {
+            flex-shrink: 0;
+            padding: 5px 15px;
+            margin: 0 5px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .tab img {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .tab:hover {
+            background-color: #d4d4d4;
+        }
+
+        .tab.active {
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #0056b3;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab active" onclick="showContent(0)">
+            <img src="https://via.placeholder.com/16" alt="Icon 1">Tab 1
+        </div>
+        <div class="tab" onclick="showContent(1)">
+            <img src="https://via.placeholder.com/16" alt="Icon 2">Tab 2
+        </div>
+        <div class="tab" onclick="showContent(2)">
+            <img src="https://via.placeholder.com/16" alt="Icon 3">Tab 3
+        </div>
+        <div class="tab" onclick="showContent(3)">
+            <img src="https://via.placeholder.com/16" alt="Icon 4">Tab 4
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        Content for Tab 1
+    </div>
+
+    <script>
+        const contents = [
+            "Content for Tab 1",
+            "Content for Tab 2",
+            "Content for Tab 3",
+            "Content for Tab 4",
+        ];
+
+        function showContent(index) {
+            document.getElementById('content').innerText = contents[index];
+            document.querySelectorAll('.tab').forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+        }
+    </script>
+</body>
+</html>
