@@ -27,9 +27,9 @@
             flex-shrink: 0;
             padding: 20px 30px;
             margin: 10px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: 1px solid #cccccc;
+            background-color: transparent; /* Nền trong suốt */
+            color: #ffffff; /* Màu chữ trắng */
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Viền mờ, màu trắng */
             border-radius: 10px;
             text-align: center;
             cursor: pointer;
@@ -39,13 +39,14 @@
         }
 
         .tab:hover {
-            background-color: #0056b3;
+            background-color: rgba(255, 255, 255, 0.1); /* Nền mờ khi hover */
+            border-color: #ffffff; /* Viền sáng lên khi hover */
         }
 
         .tab.active {
-            background-color: #28a745;
+            background-color: rgba(0, 123, 255, 0.5); /* Màu nền trong suốt của tab đang active */
             color: #ffffff;
-            border-color: #1e7e34;
+            border-color: #007bff; /* Viền sáng lên khi tab active */
         }
     </style>
 </head>
