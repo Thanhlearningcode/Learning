@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Tabs</title>
+    <title>Embedded Engineering</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,31 +14,31 @@
 
         .tabs {
             display: flex;
+            flex-wrap: wrap;
             background-color: #e0e0e0;
-            padding: 5px;
-            overflow-x: auto;
-            white-space: nowrap;
+            padding: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .tab {
             flex-shrink: 0;
-            padding: 5px 15px;
-            margin: 0 5px;
+            padding: 10px 20px;
+            margin: 5px;
             background-color: #ffffff;
             border: 1px solid #cccccc;
-            border-radius: 3px;
+            border-radius: 5px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 16px;
             display: inline-block;
         }
 
         .tab img {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             vertical-align: middle;
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         .tab:hover {
@@ -50,32 +50,55 @@
             color: #ffffff;
             border-color: #0056b3;
         }
-
-        .content {
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #cccccc;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
     <div class="tabs">
         <div class="tab active" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
-            <img src="https://via.placeholder.com/16" alt="Icon 1">Tab 1
+            <img src="https://via.placeholder.com/20" alt="Icon 1">Tab 1
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
-            <img src="https://via.placeholder.com/16" alt="Icon 2">Tab 2
+            <img src="https://via.placeholder.com/20" alt="Icon 2">Tab 2
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
-            <img src="https://via.placeholder.com/16" alt="Icon 3">Tab 3
+            <img src="https://via.placeholder.com/20" alt="Icon 3">Tab 3
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
-            <img src="https://via.placeholder.com/16" alt="Icon 4">Tab 4
+            <img src="https://via.placeholder.com/20" alt="Icon 4">Tab 4
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
-            <img src="https://via.placeholder.com/16" alt="YouTube">YouTube Playlist
+            <img src="https://via.placeholder.com/20" alt="YouTube">YouTube Playlist
+        </div>
+        <!-- Thêm 10 nút mới -->
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 6">Tab 6
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 7">Tab 7
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 8">Tab 8
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 9">Tab 9
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 10">Tab 10
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 11">Tab 11
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 12">Tab 12
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 13">Tab 13
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 14">Tab 14
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLiIQthhvj7TUl2VtJYxItKJHPRxSVPOQ_', '_blank')">
+            <img src="https://via.placeholder.com/20" alt="Icon 15">Tab 15
         </div>
     </div>
 </body>
