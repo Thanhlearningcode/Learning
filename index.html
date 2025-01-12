@@ -39,16 +39,16 @@
         /* Tabs container */
         .tabs {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
-            gap: 50px; /* Increased space between buttons */
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px; /* Tăng khoảng cách giữa các nút */
             padding: 40px;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 20px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
             animation: fadeIn 2s ease-in-out;
             z-index: 1;
-            width: 95%; /* Increased width of the container */
-            max-width: 1400px; /* Set a larger max-width */
+            width: 90%;
+            max-width: 1200px;
             margin: 30px auto;
         }
 
@@ -76,7 +76,7 @@
         /* Hover effect for tabs */
         .tab:hover {
             background: linear-gradient(45deg, rgba(0, 255, 255, 0.7), rgba(255, 0, 255, 0.7));
-            transform: scale(1.1);
+            transform: scale(1.1); /* Tạo hiệu ứng phóng to khi hover */
             box-shadow: 0 10px 30px rgba(0, 255, 255, 0.8);
             color: #ff00ff;
             filter: brightness(1.2);
@@ -105,7 +105,7 @@
         .tab.active {
             background: linear-gradient(45deg, rgba(255, 255, 85, 0.8), rgba(255, 0, 255, 0.8));
             box-shadow: 0 8px 30px rgba(255, 0, 255, 0.6);
-            transform: scale(1.1);
+            transform: scale(1.1); /* Tạo hiệu ứng phóng to khi active */
             color: #ffffff;
         }
 
@@ -153,6 +153,9 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXr-e3DppYirXkrHSxhYUTK', '_blank')">
             Automative-HALA
         </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWljxA31fAXnNZMXizPG03a', '_blank')">
+            RTOS-HALA
+        </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVjATpEftZfPsLY5kFvQm5L', '_blank')">
             RTOS-ASANG
         </div>
@@ -170,6 +173,30 @@
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVJxR0Ek6XOFir5JsngJN2y', '_blank')">
             FresherFPT-AWIND
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVD3KG9DMt8tIf7JLV_hCva', '_blank')">
+            EmbeddedLinux-AWIND
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWUw2B9jVrj5JF5nSjTJXC7', '_blank')">
+            EmbeddedLinux(OLD)-AWIND
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXFOZ88UOvHbCkvqSSC2kWC', '_blank')">
+            Yocto_AWIND
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVQhQqCP5GvvQiyy_JNr6oL', '_blank')">
+            EmbeddedLinux-APHU
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVrcoYVUaK2LwICC6VPe-If', '_blank')">
+            EmbeddedLinux(OLD)-APHU
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JViK2CQU_Pp2dnq6PDXDHDZ', '_blank')">
+            EdgeAI-TAPIT
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUtPwqcK96BKXn62ADqsH3v', '_blank')">
+            STM32-TAPIT
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVsyOh7u6c_wWefiWv12ZQ5', '_blank')">
+            STM32-IMIC
         </div>
     </div>
 </body>
