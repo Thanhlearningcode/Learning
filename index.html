@@ -5,68 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Engineering</title>
     <style>
-        /* Reset và chuẩn hóa nền */
+        /* To remove margin and padding from the body and ensure the full viewport is used */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Background animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('https://raw.githubusercontent.com/Thanhlearningcode/Learning/main/1.jpg');
             background-size: cover;
             background-position: center;
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            animation: backgroundAnim 30s linear infinite;
+            filter: blur(5px);
+            z-index: -1;
         }
 
-        /* Các nút sẽ được phân bố đều */
+        /* Animation for the background */
+        @keyframes backgroundAnim {
+            0% { background-position: center top; }
+            50% { background-position: center bottom; }
+            100% { background-position: center top; }
+        }
+
         .tabs {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 cột */
-            gap: 20px;
-            width: 90%; /* Chiếm 90% màn hình */
-            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-            margin: 20px;
-            justify-items: center; /* Căn giữa các nút */
-        }
-
-        .tab {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            height: 120px; /* Chiều cao cố định cho tất cả các nút */
-            background-color: rgba(0, 123, 255, 0.7);
-            border: 2px solid #007bff;
-            border-radius: 15px;
+            padding: 40px;
+            background: linear-gradient(45deg, rgba(0, 123, 255, 0.7), rgba(255, 0, 255, 0.7));
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 2s ease-in-out;
+            z-index: 1;
+        }
+
+        /* Tab styling */
+        .tab {
+            flex-shrink: 0;
+            padding: 20px 30px;
+            margin: 15px;
+            background: linear-gradient(45deg, rgba(255, 85, 255, 0.6), rgba(255, 255, 85, 0.6));
             color: #ffffff;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
             text-align: center;
-            font-size: 20px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%; /* Đảm bảo nút chiếm đầy ô */
-            max-width: 200px; /* Giới hạn chiều rộng của nút */
-            box-sizing: border-box;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Thêm hiệu ứng bóng đổ */
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
-        /* Hiệu ứng hover */
         .tab:hover {
-            background-color: rgba(0, 123, 255, 1); /* Nền sáng khi hover */
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Tăng bóng đổ khi hover */
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.7), rgba(255, 0, 255, 0.7));
+            border-color: rgba(0, 255, 255, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
+            transform: scale(1.1);
+            color: #ff00ff;
         }
 
-        /* Màu sắc khi tab được chọn (active) */
         .tab.active {
-            background-color: rgba(0, 123, 255, 1); /* Màu nền sáng khi active */
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Tăng bóng đổ khi active */
+            background: linear-gradient(45deg, rgba(255, 255, 85, 0.8), rgba(255, 0, 255, 0.8));
+            border-color: #ff00ff;
+            transform: scale(1.2);
+            color: #ffffff;
+            box-shadow: 0 8px 30px rgba(255, 0, 255, 0.6);
+        }
+
+        /* Animation for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for tab hover scale */
+        @keyframes scaleUp {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .tabs {
+                padding: 20px;
+            }
+
+            .tab {
+                font-size: 16px;
+                padding: 15px 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Background element -->
+    <div class="background"></div>
+
+    <!-- Tabs Section -->
     <div class="tabs">
         <div class="tab active" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUBIPu1wHho0tMHnfpLMfcQ', '_blank')">
             C/C++-HALA
