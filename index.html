@@ -35,34 +35,42 @@
             100% { background-position: center top; }
         }
 
+        /* Tab container */
         .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Chia thành 5 cột */
+            gap: 15px; /* Khoảng cách giữa các nút */
             padding: 40px;
             background: linear-gradient(45deg, rgba(0, 123, 255, 0.7), rgba(255, 0, 255, 0.7));
             border-radius: 20px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
             animation: fadeIn 2s ease-in-out;
             z-index: 1;
+            width: 90%; /* Chiếm 90% chiều rộng của màn hình */
+            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+            margin: auto;
         }
 
         /* Tab styling */
         .tab {
-            flex-shrink: 0;
-            padding: 20px 30px;
-            margin: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             background: linear-gradient(45deg, rgba(255, 85, 255, 0.6), rgba(255, 255, 85, 0.6));
             color: #ffffff;
             border: 3px solid rgba(255, 255, 255, 0.8);
             border-radius: 15px;
             text-align: center;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             transition: all 0.4s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            height: 120px; /* Đảm bảo chiều cao cố định */
+            width: 100%; /* Các nút sẽ chiếm 100% chiều rộng của các ô */
+            box-sizing: border-box;
         }
 
         .tab:hover {
@@ -93,17 +101,11 @@
             }
         }
 
-        /* Animation for tab hover scale */
-        @keyframes scaleUp {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
         /* Responsive design for smaller screens */
         @media (max-width: 768px) {
             .tabs {
                 padding: 20px;
+                grid-template-columns: repeat(2, 1fr); /* Chuyển thành 2 cột trên màn hình nhỏ */
             }
 
             .tab {
