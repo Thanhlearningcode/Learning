@@ -63,14 +63,15 @@
             border-radius: 15px;
             text-align: center;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px; /* Đảm bảo kích thước font đồng đều */
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             transition: all 0.4s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            height: 120px; /* Đảm bảo chiều cao cố định */
+            height: 120px; /* Chiều cao cố định */
             width: 100%; /* Các nút sẽ chiếm 100% chiều rộng của các ô */
             box-sizing: border-box;
+            overflow: hidden; /* Ngăn văn bản tràn ra ngoài */
         }
 
         .tab:hover {
@@ -109,7 +110,7 @@
             }
 
             .tab {
-                font-size: 16px;
+                font-size: 14px; /* Giảm kích thước font cho màn hình nhỏ */
                 padding: 15px 20px;
             }
         }
