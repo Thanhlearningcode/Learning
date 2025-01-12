@@ -41,7 +41,7 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 40px; /* Tăng khoảng cách giữa các nút */
-            padding: 50px;
+            padding: 50px; /* Tăng padding để làm khung chứa nút to hơn */
             background: rgba(255, 255, 255, 0.3);
             border-radius: 20px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
@@ -50,7 +50,6 @@
             width: 99%; /* Tăng width lên 99% */
             max-width: 1600px; /* Tăng max-width lên 1600px */
             margin: 30px auto;
-            height: 450px; /* Tăng chiều cao của khung chứa các nút */
         }
 
         /* Tab button styling */
@@ -58,16 +57,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 12px 18px; /* Giảm kích thước nút */
+            padding: 18px 22px; /* Kích thước nút nhỏ như yêu cầu trước */
             background: linear-gradient(45deg, rgba(255, 85, 255, 0.6), rgba(255, 255, 85, 0.6));
             color: #fff;
             border-radius: 12px;
-            font-size: 14px; /* Giảm kích thước chữ */
+            font-size: 16px;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
             cursor: pointer;
             transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-            height: 80px; /* Giảm chiều cao của nút */
+            height: 100px;
             width: 100%;
             overflow: hidden;
             border: 3px solid rgba(255, 255, 255, 0.5);
@@ -126,13 +125,11 @@
         @media (max-width: 768px) {
             .tabs {
                 grid-template-columns: repeat(2, 1fr);
-                height: auto; /* Điều chỉnh chiều cao khung chứa nút trong các thiết bị di động */
             }
 
             .tab {
-                font-size: 12px; /* Giảm kích thước font chữ trong phiên bản mobile */
-                padding: 10px 14px; /* Giảm padding thêm một chút trong phiên bản mobile */
-                height: 70px; /* Giảm chiều cao của nút */
+                font-size: 14px; /* Giảm kích thước font chữ trong phiên bản mobile */
+                padding: 15px 18px; /* Giảm padding thêm một chút trong phiên bản mobile */
             }
         }
 
