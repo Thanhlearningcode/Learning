@@ -6,47 +6,66 @@
     <title>Embedded Engineering</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://raw.githubusercontent.com/Thanhlearningcode/Learning/main/1.jpg'); /* Đặt ảnh làm nền */
-            background-size: cover; /* Đảm bảo ảnh phủ kín toàn bộ nền */
-            background-position: center; /* Căn giữa ảnh */
-            color: #ffffff; /* Màu chữ toàn trang là trắng */
+            background-image: url('https://raw.githubusercontent.com/Thanhlearningcode/Learning/main/1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
         }
 
         .tabs {
             display: flex;
             flex-wrap: wrap;
-            background-color: rgba(0, 0, 0, 0.5); /* Nền mờ cho phần tabs để dễ nhìn */
-            padding: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin: 20px;
         }
 
         .tab {
             flex-shrink: 0;
-            padding: 20px 30px;
+            padding: 15px 25px;
             margin: 10px;
-            background-color: transparent; /* Nền trong suốt */
-            color: #ffffff; /* Màu chữ trắng */
-            border: 2px solid rgba(255, 255, 255, 0.5); /* Viền mờ, màu trắng */
-            border-radius: 10px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 24px;
-            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
         }
 
         .tab:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Nền mờ khi hover */
-            border-color: #ffffff; /* Viền sáng lên khi hover */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #ffffff;
+            transform: scale(1.05);
         }
 
         .tab.active {
-            background-color: rgba(0, 123, 255, 0.5); /* Màu nền trong suốt của tab đang active */
+            background-color: rgba(0, 123, 255, 0.6);
             color: #ffffff;
-            border-color: #007bff; /* Viền sáng lên khi tab active */
+            border-color: #007bff;
+            transform: scale(1.1);
+        }
+
+        .tab:active {
+            transform: scale(1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .tab {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
         }
     </style>
 </head>
