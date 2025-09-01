@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Embedded Engineering</title>
     <style>
         /* General resets and body setup */
@@ -11,22 +11,25 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(45deg, #1d1d1d, #252525);
-            overflow: hidden;
+            /* ✅ Cho phép cuộn dọc */
+            overflow-y: auto;
+            min-height: 100vh;
+            scroll-behavior: smooth;
         }
 
         /* Background animation */
         .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            /* ✅ Cố định nền để không cuộn cùng nội dung */
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: url('https://raw.githubusercontent.com/Thanhlearningcode/Learning/main/1.jpg');
             background-size: cover;
             background-position: center;
             animation: backgroundAnim 30s linear infinite;
             filter: blur(5px);
             z-index: -1;
+            will-change: background-position;
         }
 
         /* Animation for background */
@@ -50,6 +53,9 @@
             width: 99%; /* Tăng width lên 99% */
             max-width: 1600px; /* Tăng max-width lên 1600px */
             margin: 30px auto;
+            /* Nếu muốn chỉ khu vực này cuộn:
+               max-height: calc(100vh - 60px);
+               overflow: auto; */
         }
 
         /* Tab button styling */
@@ -111,28 +117,31 @@
 
         /* Fade-in animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .tabs {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 24px;
             }
 
             .tab {
                 font-size: 12px; /* Giảm kích thước font chữ trong phiên bản mobile */
                 padding: 10px 14px; /* Giảm padding thêm một chút trong phiên bản mobile */
+                height: 70px;
             }
         }
 
+        /* (Tuỳ chọn) Tùy biến thanh cuộn */
+        *::-webkit-scrollbar { width: 10px; }
+        *::-webkit-scrollbar-track { background: rgba(255,255,255,.15); border-radius: 10px; }
+        *::-webkit-scrollbar-thumb { background: rgba(255,255,255,.45); border-radius: 10px; }
+        *::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.65); }
+        * { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.45) rgba(255,255,255,.15); }
     </style>
 </head>
 <body>
@@ -145,16 +154,16 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUBIPu1wHho0tMHnfpLMfcQ', '_blank')">
             C/C++-OK
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVnhp28xyY8---IuKy6rOpS', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVnhp28xyY8---IuKy6rOpS', '_blank')">
             C/C++2.0-OK
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXMVVa0ijl43XswksSycGt_', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXMVVa0ijl43XswksSycGt_', '_blank')">
             QT_C/C++-OK
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWljxA31fAXnNZMXizPG03a', '_blank')">
             RTOS-OK
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JV-UhCdq8DtFB8APmdFIkFF', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JV-UhCdq8DtFB8APmdFIkFF', '_blank')">
             RTOS2.0-OK
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWeG5Beq_f37bknx5Xbc0QY', '_blank')">
@@ -169,19 +178,19 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUsJAwHwL1r0SiBpPduYDB4', '_blank')">
             Linux-OK
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUj9zXNjvA1PrrSpp7nwsp8', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUj9zXNjvA1PrrSpp7nwsp8', '_blank')">
             Automative2.0-OK
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVjATpEftZfPsLY5kFvQm5L', '_blank')">
             RTOS-Aluxury
         </div>
-          <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWO780hc_zNinb8u3GJu2ag', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWO780hc_zNinb8u3GJu2ag', '_blank')">
             Embedded_Skills-Aluxury
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JV-NV0C8zKCK9EteBV2ZEA9', '_blank')">
             STM32(main)-ASluxury
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXlKsT216ZEB1FrtrhDhJk3', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXlKsT216ZEB1FrtrhDhJk3', '_blank')">
             STM32(2025)-ASluxury
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWIsq5c2JAAhNVpVxikEGi2', '_blank')">
@@ -193,19 +202,19 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXeeQvghYP3CeJ1R64Itua_', '_blank')">
             C++-Aluxury
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVHIwIzBuZuxDfvAwE32JAC', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVHIwIzBuZuxDfvAwE32JAC', '_blank')">
             C++(2025)-Aluxury
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXPTpKgOdGGjZ7_ysXhnJu9', '_blank')">
             FresherFPT-AWIND
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWPuorg-gs724-kHbl8iPKn', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWPuorg-gs724-kHbl8iPKn', '_blank')">
             Embedded_FULL-AWIND
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVD3KG9DMt8tIf7JLV_hCva', '_blank')">
             EmbeddedLinux-AWIND
         </div>
-                <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JU5P3DM7S4doZ3uu8komUx9', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JU5P3DM7S4doZ3uu8komUx9', '_blank')">
             EmbeddedLinux(2025)-AWIND
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWUw2B9jVrj5JF5nSjTJXC7', '_blank')">
@@ -214,13 +223,13 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWPuorg-gs724-kHbl8iPKn', '_blank')">
             C_C++_AWIND
         </div>
-          <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUhZFqQ4wyjhzgFtuOp66dA', '_blank')">
-           S32k144_AWIND
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUhZFqQ4wyjhzgFtuOp66dA', '_blank')">
+            S32k144_AWIND
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUStLBdnPZ1wclSlldZYAz9', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUStLBdnPZ1wclSlldZYAz9', '_blank')">
             Android_AWIND
         </div>
-         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUeY8rO7lQu06AK8dVXeMJs', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUeY8rO7lQu06AK8dVXeMJs', '_blank')">
             C_BASIC_AWIND
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVQhQqCP5GvvQiyy_JNr6oL', '_blank')">
@@ -238,7 +247,7 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVsyOh7u6c_wWefiWv12ZQ5', '_blank')">
             STM32-IMIC
         </div>
-                <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVc_1-N-qMwzIRUQvacsd7p', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVc_1-N-qMwzIRUQvacsd7p', '_blank')">
             STM32(NEW)-IMIC
         </div>
 
@@ -249,9 +258,9 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JU-aVW5ocPCvXtyFY-f-5Lr')">
             TOEIC
         </div>
-             <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWzPDjfrN2v1nvi-Fn2qXMN', '_blank')">
-   Japanese
-</div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWzPDjfrN2v1nvi-Fn2qXMN', '_blank')">
+            Japanese
+        </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUkq6BoCLJZt4H2gPgUfYZi', '_blank')">
             ETHERNET
         </div>
@@ -264,75 +273,75 @@
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWQ7AeK2WZNw5yHkKk3Zg11', '_blank')">
             Bootloader
         </div>
-                <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXMjRiuw8PeQK3-nCS9g23t', '_blank')">
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXMjRiuw8PeQK3-nCS9g23t', '_blank')">
             FreeRTOS_STM32
         </div>
         <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JU-vNMjkNQGiDR0wxCK6Ktk', '_blank')">
-    Embedded-Linux-Condensed
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JW43jHmpoEtedcWNVdM56CZ', '_blank')">
-    Auto-Spice-Condensed
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JU47uDUM6hZqHwxTg4Pe4YJ', '_blank')">
-    Cmake-Condensed
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JX6dK1P2XDxk6eOkQZ268f4', '_blank')">
-    Makefile-Condensed
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVDJgqGQ64PLCzZkbJnbIkD', '_blank')">
-    C-Advanced
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JX6dK1P2XDxk6eOkQZ268f4', '_blank')">
-    Startup-File
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVslAjedhpCIt-iMu91egCm', '_blank')">
-    ESP32
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUoUboqM-5_N4Fr4G_HkNmF', '_blank')">
-    FOTA
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVDJgqGQ64PLCzZkbJnbIkD', '_blank')">
-    C-Advanced
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUSiayNm6GMvSeRajYv0DZD', '_blank')">
-    MCU_Phật
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUkdJpPYmQFIx9TowSQL9pX', '_blank')">
-    DEBUG
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWmQto_M2x1fQQetyZdOIjP', '_blank')">
-    Vi Mạch_ICT
-</div>
- <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUMTZocWCq8unIs_0FucOdv', '_blank')">
-    Cmake-Ude
-</div>
-<div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVcKTXtcAIK4tAzeOVylPRg', '_blank')">
-    Zigbee-Ude
-</div>
-  <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUY-bffmFWuLZ-3OLJ9QQCo', '_blank')">
-   Pattern-Ude
-</div>
-  <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXquVksrzb3Wi6_yMBNLbuu', '_blank')">
-   GNU_Toolchain-Ude
-</div>
-      <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWMMeXYc2QyjktwGzkQi19w', '_blank')">
-   Modern-C++-Ude
-</div>
-      <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JV9vEbtin-P4Q70rKs0cNja', '_blank')">
-   FreeRTOS++-Ude
-</div>
-      <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVqm6OabF_Ybsl80qR10Ac_', '_blank')">
-   CC++_Embedded-Ude
-</div>
-      <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JURb70kOA1BxKuzs75HRQCO', '_blank')">
-   CC++_ADV-Ude
-</div>
-         <div class="tab" onclick="window.open('https://drive.google.com/drive/folders/1ji_l2I3Do2yGBcKpftTJM3zCiSFDaBu6?usp=drive_link', '_blank')">
-   Android_embedded-Thunder
-</div>
-          <div class="tab" onclick="window.open('https://www.udemy.com/course/qt6-c-gui-mobile-app-development/learn/lecture/32705806#overview', '_blank')">
-   QT6_GUI-Ude
-</div>
+            Embedded-Linux-Condensed
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JW43jHmpoEtedcWNVdM56CZ', '_blank')">
+            Auto-Spice-Condensed
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JU47uDUM6hZqHwxTg4Pe4YJ', '_blank')">
+            Cmake-Condensed
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JX6dK1P2XDxk6eOkQZ268f4', '_blank')">
+            Makefile-Condensed
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVDJgqGQ64PLCzZkbJnbIkD', '_blank')">
+            C-Advanced
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JX6dK1P2XDxk6eOkQZ268f4', '_blank')">
+            Startup-File
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVslAjedhpCIt-iMu91egCm', '_blank')">
+            ESP32
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUoUboqM-5_N4Fr4G_HkNmF', '_blank')">
+            FOTA
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVDJgqGQ64PLCzZkbJnbIkD', '_blank')">
+            C-Advanced
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUSiayNm6GMvSeRajYv0DZD', '_blank')">
+            MCU_Phật
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUkdJpPYmQFIx9TowSQL9pX', '_blank')">
+            DEBUG
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWmQto_M2x1fQQetyZdOIjP', '_blank')">
+            Vi Mạch_ICT
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUMTZocWCq8unIs_0FucOdv', '_blank')">
+            Cmake-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVcKTXtcAIK4tAzeOVylPRg', '_blank')">
+            Zigbee-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JUY-bffmFWuLZ-3OLJ9QQCo', '_blank')">
+            Pattern-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JXquVksrzb3Wi6_yMBNLbuu', '_blank')">
+            GNU_Toolchain-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JWMMeXYc2QyjktwGzkQi19w', '_blank')">
+            Modern-C++-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JV9vEbtin-P4Q70rKs0cNja', '_blank')">
+            FreeRTOS++-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JVqm6OabF_Ybsl80qR10Ac_', '_blank')">
+            CC++_Embedded-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://www.youtube.com/playlist?list=PLuLSa6UJU-JURb70kOA1BxKuzs75HRQCO', '_blank')">
+            CC++_ADV-Ude
+        </div>
+        <div class="tab" onclick="window.open('https://drive.google.com/drive/folders/1ji_l2I3Do2yGBcKpftTJM3zCiSFDaBu6?usp=drive_link', '_blank')">
+            Android_embedded-Thunder
+        </div>
+        <div class="tab" onclick="window.open('https://www.udemy.com/course/qt6-c-gui-mobile-app-development/learn/lecture/32705806#overview', '_blank')">
+            QT6_GUI-Ude
+        </div>
     </div>
 </body>
 </html>
